@@ -1,0 +1,2 @@
+INSERT INTO info (full_name,pledge_class,grad_year, major,hometown,hobbies,dream_job,quote)
+VALUES('Miles Dickinson','Fall 2011','May 2014','Information Systems and Supply Chain Management','Westminster, MD','Web Development, Sports, Snowboarding, Reading','CTO','There is never enough time to do all the nothing you want');

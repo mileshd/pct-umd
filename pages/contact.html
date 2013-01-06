@@ -1,0 +1,120 @@
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+<style>
+
+.response_error {
+	width: 430px;
+	text-align: left;
+	border: 1px solid red;
+	background-color: #FCC;
+	padding: 5px;
+	margin-bottom: 20px;
+	 -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;	
+}
+
+.response_success {
+	width: 430px;
+	text-align: left;
+	border: 1px solid green;
+	background-color: #3F6;
+	padding: 5px;
+	margin-bottom: 20px;
+	 -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;	
+}
+
+</style>
+  
+  <script type="application/javascript">
+  $(document).ready(function() {
+	
+		/*function validateEmail(email) { 
+		    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\
+		".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA
+		-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		    return re.test(email);
+		}*/
+  
+  $('#submit').click(function() {
+		$('#response').html('hello');
+		var name = $('#x').val();
+		var email = $('#y').val();
+		var subject =  $('#subject').val();
+		var category =  $('#category option:selected').val();
+		var message =  $('#message').val();
+		var hasError = false;
+		var emailReg = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/;
+		var errors = '';
+		console.log(email);
+		console.log(name);
+		console.log(message);
+
+		if(name == '') {
+			errors += "You forgot to enter your name.</br>";
+		  hasError = true;
+		}
+		
+		if(email == '') {
+			errors += "You forgot to enter your email address.</br>";
+		  hasError = true;
+		} /*else if() {
+			errors += "Your email address does not appear to be valid.</br>";
+		 	hasError = true;
+		}*/
+		
+		if(subject == '') {
+			errors += "You forgot to write a subject.</br>";
+			hasError = true;
+		} 
+		
+		if (message == '') {
+			errors += "You forgot to write a message.\n";
+			hasError = true;
+		}
+		
+		if(hasError) {
+			$('#response').addClass("response_error").html(errors);
+		} else {
+					$.post("../php/contact.php", {name: name, email: email, subject: subject, category: category, message: message},
+		function(data) {
+			if (data.substring(0, 5) == "Thank") {
+			    $('#response').addClass("response_success").removeClass("response_error");
+			} else {
+				 $('#response').addClass("response_error").removeClass("response_success");
+			}
+			
+			$('#response').html(data);
+		});
+	}
+	
+  return false;
+  });
+
+});
+  </script>
+
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>Contact Us</h1>
+        <div id="response"></div>
+        <form action="" method="post">
+          <div class="form_settings">
+            <p><span>Name</span><input class="contact" type="text" name="x" id="x" value="" /></p>
+						<p><span>Email</span><input class="contact" type="text" name="y" id="y" value="" /></p>
+            <p><span>Subject</span><input class="contact" type="text" name="subject" id="subject" value="" /></p>
+            <p><span>Category</span><select name='category' id='category'>
+  						<option value="feedback">Website Feedback</option>
+  						<option value="president">Ask the President!</option>
+  						<option value="rush">Rush</option>
+  						<option value="pledging">Pledging</option>
+             </select></p>
+            <p><span>Message</span><textarea class="contact textarea" rows="8" cols="50" name="message" id="message" ></textarea></p>
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" id="submit" type="submit" name="contact_submitted" value="submit" /></p>
+          </div>
+        </form>
+      </div>

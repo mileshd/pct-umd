@@ -1,0 +1,12 @@
+CREATE TABLE info
+(
+   id INT IDENTITY(1,1) PRIMARY KEY,
+   full_name VARCHAR(50),
+   pledge_class VARCHAR(50),
+   grad_year VARCHAR(50),
+   major VARCHAR(50),
+   hometown VARCHAR(50),
+   hobbies VARCHAR(500),
+   dream_job VARCHAR(500),
+   quote VARCHAR(500),
+);

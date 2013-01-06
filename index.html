@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Welcome to Phi Chi Theta!</title>
+  <meta name="description" content="Welcome to " />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+	<style type="text/css">
+		#format {
+			font-family: 'trebuchet ms', arial, sans-serif;
+			font-size: 13.7px;
+			line-height: 100%;
+		}
+		
+		img.social {
+			float: right; 
+			margin-top: -15px;"
+			cursor: pointer;
+		}
+		
+		@-moz-document url-prefix() {
+		    img.social {
+		        margin-top: -20px;
+		    }
+		}
+		
+	</style>
+  <script type="application/javascript" src="js/jquery.js"></script>
+  <script type="application/javascript" src="js/main.js"></script>
+  <script type="application/javascript">
+  	
+	$(document).ready(function() {
+	
+		$('#content').load('pages/home.html');
+		
+		$('#subscribe').submit(function(){
+			var name = $('#name').val();
+			var email = $('#email').val();
+			
+			$.post('php/subscribe.php', {name: name, email: email}, function(data) {
+				$('#subscribe_text').html(data);
+				$('#name').val('');
+				$('#email').val('');
+				
+				});
+			return false;
+		});
+		
+		$('#twitter').click(function(){
+			open_in_new_tab("https://twitter.com/pctTerps");
+		});
+		
+		$('#facebook').click(function(){
+			open_in_new_tab("http://www.facebook.com/events/353047711447947/?context=create");
+		});
+		
+		$('#linkedin').click(function(){
+			open_in_new_tab("http://www.linkedin.com/groups/Phi-Chi-Theta-Alpha-Mu-3708715");
+		});
+		
+		function open_in_new_tab(url)
+		{
+		  window.open(url, '_blank');
+		  window.focus();
+		}
+		
+		$('.sidebar').addClass('format');
+	
+	});
+	
+  </script>
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <a class="home" style="cursor: pointer;"><img src="images/logo.png" /></a><h1>Phi Chi Theta</h1>
+        <div class="slogan"><a style="cursor: pointer;"><img src="images/linkedin.gif" class="social" id="linkedin"/></a><a style="cursor: pointer;"><img src="images/facebook.gif" class="social" id="facebook" /></a><a style="cursor: pointer;"><img src="images/twitter.gif" class="social" id="twitter"/></a></div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="current" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="current"><a href="#home" class="home">Home</a></li>
+          <li><a href="#about" class="about">About</a></li>
+          <li><a href="#brothers" class="brothers">Brothers</a></li>
+          <li><a href="#photos" class="photos">Photos</a></li>
+          <li><a href="#contact" class="contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <img class="paperclip" src="style/paperclip.png" alt="paperclip" />
+        <div class="sidebar format" style="font-family: 'trebuchet ms', arial, sans-serif";>
+        <h1 style="font-size: 200%;">Fall 2012 Rush</h1>
+        <h2>Meet and Greet</h2>
+		September 18th: 7:00-9:00 PM 
+		Dress: Casual<br />
+		Location: VMH 1212<br /><br />
+		<h2>Professional Event</h2>
+		September 20th: 7:00-9:00 PM
+		Dress: Business Professional<br />
+		Location: VMH 1333<br /><br />
+		<h2>BBQ Social</h2>
+		September 23rd: 2:00-4:00 PM 
+		Dress: Casual<br />
+		Location: Washington Quad<br /><br />
+		<h2>Speed Dating</h2>
+		September 25th: 6:00-8:00 PM 
+		Dress: Casual<br />
+		Location: Executive Dining Room<br /><br />
+		<h2>Final Round Interviews</h2>
+		September 27th: 6:00-8:00 PM 
+		Dress: Business Professional<br />
+    Location: VMH 1335<br />
+        </div>
+        <img class="paperclip" src="style/paperclip.png" alt="paperclip" />
+        <div class="sidebar">
+          <h3>Subscribe</h3>
+          <p id="subscribe_text">If you'd like to stay up-to-date or want to know more about Phi Chi Theta, please enter your email address and click 'Subscribe'.</p>
+          <form method="post" action="#" id="subscribe">
+			<p style="padding: 0 0 9px 0;"><input class="search" type="text" id="name" name="name" value="Your Name" onFocus="this.value=''" /></p>
+            <p style="padding: 0 0 9px 0;"><input class="search" type="text" id="email" name="email_address" value="Your Email Address" onFocus="this.value=''" /></p>
+            <p><input class="subscribe" name="subscribe" type="submit" value="Subscribe" /></p>
+          </form>
+        </div>
+        <img class="paperclip" src="style/paperclip.png" alt="paperclip" />
+        <div class="sidebar">
+			<h1 class="sidebar_center" style="font-size: 200%;">Brother of the Month</h1>
+            <img src="images/brother_of_the_month.gif" class="center" style="margin-bottom: 5px" />
+            <h2 class="center" style="margin-top: 0px; margin-bottom: 0px">Megan O'Donnell</h2>
+            <p style="margin: 0 0 0 10px;">Congratulations to Megan O'Donnell, for demonstrating exemplary service to the fraternity and the College Park community. </p>
+        </div>
+      </div>
+      <div id="content">
+        <!-- Dynamic Content -->
+      </div>
+    </div>
+    <div id="footer">
+      <p style="color: #FFF;">Copyright &copy; Phi Chi Theta 2012 | Design by <a href="#" style="color: white; text-decoration: underline;">Miles D</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<link rel="Stylesheet" type="text/css" href="../js/smoothDivScroll/css/smoothDivScroll.css" />
+<style type="text/css">
+div[id$="y"] > img {
+	cursor: pointer;
+	margin-left: 55px;
+}
+
+.pics {  
+    height:  332px;  
+    width:   532px;  
+    padding: 0;  
+    margin:  0;  
+} 
+ 
+.pics img {  
+    padding: 15px;  
+    border:  1px solid #ccc;
+    background-color: #eee;  
+    width:  500px; 
+    height: 300px; 
+    top:  0; 
+    left: 0
+	-moz-border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -khtml-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+
+</style>
+
+<div style="width: 600px;"><h1 style="float: left;">Professional</h1><span style="float: right; margin-top: 20px; color: purple;">(Click on the picture to see more...)</span></div>
+<p style="clear: left;">Our professional events enable Phi Chi Theta Brothers to engage in professional development and networking.  Through talking to Alumni, Professional Speakers and fellow brothers, they are able to understand the paths they wish to pursue for their career.  We host alumni panels, professional speaker events, participate in firm visits and various other professional events.</p>
+<div id="business_gallery" class="pics">
+    <img src="../images/photos/professional/1.gif" title="" id="" />
+	<img src="../images/photos/professional/2.gif" title="" id="" />
+	<img src="../images/photos/professional/3.gif" title="" id="" />
+	<img src="../images/photos/professional/4.gif" title="" id="" />
+	<img src="../images/photos/professional/5.gif" title="" id="" />
+</div>
+<br /><br />
+<h1>Philanthropy</h1>
+<p>We strive to give back to the community by participating in philanthropy events such as food drives, soup kitchens, charity runs, environmental clean ups and many more!</p>
+<!-- <div id="philanthropy_gallery" class="pics">
+    <img src="../images/photos/1.gif" title="funky robot" id="funk" />
+    <img src="../images/photos/2.gif" title="shiny bot" id="bot" />
+    <img src="../images/photos/3.gif" title="green peace" id="peace" />
+</div> -->
+<br /><br />
+<h1>Brotherhood</h1>
+<p>We are a professional fraternity, but that doesn’t mean we don’t like to have fun!  With such a tight knit group, there are events and activities for all a wide variety of interests.  We hold social events, ranging from paintballing to hiking to Halloween haunted forests.</p>
+<div id="social_gallery" class="pics">
+    <img src="../images/photos/brotherhood/1.gif" title="" id="" />
+	<img src="../images/photos/brotherhood/2.gif" title="" id="" />
+	<img src="../images/photos/brotherhood/3.gif" title="" id="" />
+	<img src="../images/photos/brotherhood/4.gif" title="" id="" />
+	<img src="../images/photos/brotherhood/5.gif" title="" id="" />
+	<img src="../images/photos/brotherhood/6.gif" title="" id="" />
+	<img src="../images/photos/brotherhood/7.gif" title="" id="" />
+	<img src="../images/photos/brotherhood/8.gif" title="" id="" />
+	<img src="../images/photos/brotherhood/9.gif" title="" id="" />
+	<img src="../images/photos/brotherhood/10.gif" title="" id="" />
+</div>
+<div style="margin: 55px 0;"></div>
+
+<script src="../js/cycle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$('#business_gallery').cycle({ 
+    	 fx:     'shuffle', 
+    	 speed:   800, 
+         timeout: 9000000, 
+         next:   '#business_gallery', 
+         pause:   1,
+		 random: 1
+	});
+	
+	$('#philanthropy_gallery').cycle({ 
+    	 fx:     'fadeZoom', 
+    	 speed:   1000, 
+         timeout: 9000000, 
+         next:   '#philanthropy_gallery', 
+         pause:   1,
+		 random: 1
+	});
+	
+	$('#social_gallery').cycle({ 
+    	  fx:     'toss', 
+    	 speed:   1000, 
+         timeout: 9000000, 
+         next:   '#social_gallery', 
+         pause:   1,
+		 random: 1
+	});
+
+</script>

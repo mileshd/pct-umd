@@ -1,0 +1,23 @@
+body {font-family: helvetica, sans-serif;}
+a{color:white;}
+
+.pikachoose {width: 520px; height: 320px; margin: 0 auto;}
+.pika-stage {position: relative; width: 500px; height:300px; background-color: #fff; -moz-box-shadow: 10px 10px 5px #888;-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888; border:1px solid #609;
+	  -moz-border-radius: 10px;
+  		-webkit-border-radius: 10px;
+  		-khtml-border-radius: 10px;
+  		border-radius: 10px;
+	}
+
+	.pika-stage .pika-aniwrap, .pika-stage .main-image {position: absolute; top: 0; left: 0;}
+	.pika-stage .pika-aniwrap{width:100%;}
+	.pika-stage .pika-ani {position:relative;display: none;z-index:2;margin:0 auto;}
+	.pika-stage img {border:0;height:100%;}
+
+.pika-stage .caption {position: absolute; font-family: 'tangerine', arial; font-size: 28px; color: #000000; padding: 10px 5px 3px 5px; text-align: right; bottom: 0px; right: 10px;}
+	.pika-stage .caption p {padding: 0; margin: 0; line-height: 14px;}
+.pika-textnav, .pika-imgnav {display:none;}
+.pika-counter{position: absolute; bottom: -20px; left:15px; font-size:11px; display: none; visibility: hidden;}
+
+#pikame{display:none;}
